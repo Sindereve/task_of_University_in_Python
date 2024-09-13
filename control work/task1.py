@@ -1,6 +1,3 @@
-from random import random
-import math
-
 input_value = int(input())
 sum_value = input_value 
 
