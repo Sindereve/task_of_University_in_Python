@@ -1,10 +1,8 @@
-input_value = int(input())
-number_of_null = 0
+import re
 
-while input_value > 0:
-    digit = input_value%10
-    if digit == 0:
-        number_of_null+=1
-    input_value = input_value//10
-    
-print(number_of_null)
+value_input = input()
+
+pattern = r"^#[ABCDEFabcdef|0-9]{6}$"
+r = re.findall(pattern=pattern,string=value_input)
+if r:
+    print('Правильное выражение')

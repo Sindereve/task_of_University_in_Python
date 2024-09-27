@@ -1,11 +1,11 @@
-input_value = int(input())
-sum = 1
-new_value = sum
+import re
 
-for n in range(1,input_value+1):
-    new_value = new_value *1/n
-    sum = sum + new_value
-    
+value_input = input()
 
-print(f'{sum:.6}')
+pattern = r"\bА"
+r = re.sub(pattern=pattern,repl='аа',string=value_input)
 
+pattern = r"\bр"
+p_value = re.findall(pattern, string=r)
+
+print(f'{r}\n{len(p_value)}')

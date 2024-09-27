@@ -1,8 +1,16 @@
-input_value = int(input())
-sum_value = input_value 
+import re
 
-while input_value !=0:
-    input_value = int(input())
-    sum_value += input_value
+pattern = r"^[\+|\-|\d]\d*\.\d+$"
 
-print(sum_value)
+value_input = input()
+
+value = re.findall(pattern, value_input)
+
+if value:
+    pattern = r"[\.|\+|\-]"
+    value = re.split(pattern=pattern, string=value[0])
+    for i in value:
+        size = len(i)
+        if size > 0:
+            print(size)
+
